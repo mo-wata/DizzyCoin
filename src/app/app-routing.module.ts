@@ -6,7 +6,9 @@ import { CreateTransactionComponent } from './pages/create-transaction/create-tr
 import { PendingTransactionsComponent } from './pages/pending-transactions/pending-transactions.component';
 import { WalletBalanceComponent } from './pages/wallet-balance/wallet-balance.component';
 
+// An array where we can define all the places we can go in our application
 const routes: Routes = [
+  // If not path is present load BlockchainViewerComponent
   {path: '', component: BlockchainViewerComponent },
   {path: 'settings', component: SettingsComponent},
   {path: 'new/transaction', component: CreateTransactionComponent },

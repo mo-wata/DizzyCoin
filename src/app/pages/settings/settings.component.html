@@ -4,6 +4,9 @@
 
   <br>
 
+  <!--ngModel: It tells Angular that we want the value of this input field
+  to be bound to the variable name blockhain.difficulty-->
+  <!--To use ngModel, we have to add FormsModule to imports on app.module.ts-->
   <div class="form-group">
     <label for="difficulty">Difficulty</label>
     <input type="number" class="form-control" id="difficulty" aria-describedby="difficultyHelp" [(ngModel)]="blockchain.difficulty">

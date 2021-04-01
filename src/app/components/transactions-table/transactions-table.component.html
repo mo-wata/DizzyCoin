@@ -1,17 +1,24 @@
+<!--We will display this paragraph when there are no transactions given to us-->
+<!--When our transactions array is empty, we will show this message-->
 <p *ngIf="transactions.length === 0">This block has no transactions</p>
 
+<!--When there are more than 0 transactions in our array- (*ngIf)->
+<!--We will show our table right here-->
 <table class="table table-hover table-striped" *ngIf="transactions.length > 0">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">From</th>
-      <th scope="col">To</th>
-      <th scope="col">Amount</th>
-      <th scope="col">Timestamp</th>
-      <th scope="col">Valid?</th>
+      <th scope="col">#</th> <!-- The number of the transaction -->
+      <th scope="col">From</th> <!-- Which address it originated-->
+      <th scope="col">To</th> <!-- Which address it went -->
+      <th scope="col">Amount</th> <!-- How much money the transaction was -->
+      <th scope="col">Timestamp</th> <!-- When it was created -->
+      <th scope="col">Valid?</th> <!-- Whether or not it is valid -->
     </tr>
   </thead>
   <tbody>
+    <!--We create a table row for each of the transactions-->
+    <!--We loop this part of the template-->
+    <!--Then we are filling in all of these columns-->
     <tr *ngFor="let tx of transactions; index as index">
       <td>{{index}}</td>
       <td class="text-truncate" style="max-width: 100px;">
@@ -40,6 +47,7 @@
         <span class="text-muted"><small>{{tx.timestamp |date:'MMM d, y, HH:mm'}}</small></span>
       </td>
       <td style="max-width: 40px;">
+        <!--Checks if the transaction is correctly signed-->
         <span *ngIf="tx.isValid()">✓</span>
         <span *ngIf="!tx.isValid()">✗</span>
       </td>

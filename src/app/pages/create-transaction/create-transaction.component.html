@@ -6,6 +6,8 @@
 
 	<div class="form-group">
 	    <label for="fromAddress">From address</label>
+		<!--From address is bound to your public wallet key-->
+		<!--It is set to disabled because you cannot spend money from someone elses wallet-->
 	    <input type="text" class="form-control" id="fromAddress" aria-describedby="fromAddressHelp" [(ngModel)]="ownWalletKey.publicKey" disabled>
 	    <small id="fromAddressHelp" class="form-text text-muted">
 	    	This is your wallet address. You cannot change it because you can only spend your own coins.
@@ -28,6 +30,7 @@
 	    </small>
   	</div>
 
+	<!--WHen we click on this, it calls the create transaction method that we just defined-->
   	<button (click)="createTransaction()" type="submit" class="btn btn-primary">Sign & create transaction</button>
 
 </div>

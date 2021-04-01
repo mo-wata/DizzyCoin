@@ -7,8 +7,9 @@ import { BlockchainService } from '../../services/blockchain.service';
   styleUrls: ['./transactions-table.component.scss']
 })
 export class TransactionsTableComponent implements OnInit {
-  @Input()
-  public transactions = [];
+
+  //this component will need a list of transactions to visualize
+  @Input() public transactions = [];
 
   constructor(public blockchainService: BlockchainService) { }
 

@@ -8,11 +8,16 @@ import { BlockchainService } from '../../services/blockchain.service';
   styleUrls: ['./pending-transactions.component.scss']
 })
 export class PendingTransactionsComponent implements OnInit {
+  // Here, we will add an attribute and say that this class
+  // We will say that this class has some pending transactions
+  // We will initialize it as being an empty array
   public pendingTransactions = [];
   public miningInProgress = false;
   public justAddedTx = false;
 
+  // Request Angular to inject our BlockchainService
   constructor(private blockchainService: BlockchainService, private router: Router, private route: ActivatedRoute) {
+    // We need to populate the array of pendingTransactions
     this.pendingTransactions = blockchainService.getPendingTransactions();
   }
 
@@ -28,6 +33,7 @@ export class PendingTransactionsComponent implements OnInit {
 
   minePendingTransactions() {
     this.miningInProgress = true;
+    // Call blockchain service and execute exact same method
     this.blockchainService.minePendingTransactions();
     this.miningInProgress = false;
     this.router.navigate(['/']);

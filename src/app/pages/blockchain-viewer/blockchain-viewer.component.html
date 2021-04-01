@@ -4,6 +4,10 @@
 </div>
 
 <div class="container" style="overflow-x: scroll;white-space: nowrap;">
+	<!--Has to be repeated for all blocks on chain
+	using *ngFor, we will iterate over our entire blocks array-->
+	<!--(click) if the user click on this. We want to execute the showTransactions method
+	and we want to pass along the current block (the block the user has clicked on)-->
 	<app-block-view 
 		*ngFor="let block of blocks" 
 		[block]="block" 
@@ -14,9 +18,12 @@
 
 <br><br>
 
+
 <div class="container">
 	<h1>Transactions inside block {{ getBlockNumber(selectedBlock) }}</h1>
-
+	<!--Here, we want to show our Transactions table component-->
+	<!--Each block object, contains some transactions-->
+	<!--We pass it along to our transactions table component-->
 	<app-transactions-table
 		[transactions]="selectedBlock.transactions"
 	></app-transactions-table>

@@ -1,3 +1,5 @@
+<!--Put everything in a bootstrap container-->
+<!--Add this page to the routing file-->
 <div class="container">
 
 	<div class="alert alert-success" role="alert" *ngIf="justAddedTx">
@@ -7,10 +9,13 @@
 	<h1>Pending transactions</h1>
 	<p>These transactions are waiting to be included in the next block. Next block is created when you start the mining process.</p>
 
+	<!--Pass along pending transactions to visualize-->
+	<!--Angular and React are popular for component reuse-->
 	<app-transactions-table
 		[transactions]="pendingTransactions">
 	</app-transactions-table>
 
+	<!--If user clicks on this button, Angular needs to execute the minePendingTransactions method-->
 	 <button class="btn btn-primary" *ngIf="pendingTransactions.length > 0 && miningInProgress === false" (click)="minePendingTransactions()">
      	Start mining
     </button>

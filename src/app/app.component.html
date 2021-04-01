@@ -1,7 +1,7 @@
 <nav class="navbar navbar-dark bg-dark">
   <a class="navbar-brand" routerLink="/">
-    <img src="assets/img/logo-savjee.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-    &nbsp;SavjeeCoin
+    <img src="assets/img/rainbow-spin.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+    &nbsp;DizzyCoin
   </a>
 
   <div>
@@ -9,11 +9,13 @@
       Pending transactions
       <span class="badge badge-light">{{blockchain.pendingTransactions.length}}</span>
     </button>
+    <!--non breaking space-->
     &nbsp;
     <button routerLink="/settings" class="btn btn-outline-light">
       Settings
     </button>
     &nbsp;
+    <!--When we click on this we want the router link, new transaction to be opened-->
     <button routerLink="/new/transaction" class="btn btn-outline-light">
       Create transaction
     </button>

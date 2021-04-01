@@ -17,6 +17,8 @@ export class BlockchainService {
 
   minePendingTransactions() {
     this.blockchainInstance.minePendingTransactions(
+      // This expects a parameter so we have to pass along a wallet address
+      // that wants to receive the block (mining) rewards
       this.walletKeys[0].publicKey
     );
   }
@@ -38,11 +40,13 @@ export class BlockchainService {
     console.log(this.walletKeys);
   }
 
+
   getPendingTransactions() {
     return this.blockchainInstance.pendingTransactions;
   }
 
   addTransaction(tx) {
+    //passing along this request
     this.blockchainInstance.addTransaction(tx);
   }
 }

@@ -9,7 +9,9 @@ import { BlockchainService } from '../../services/blockchain.service';
 export class SettingsComponent implements OnInit {
   public blockchain;
 
+
   constructor(private blockchainService: BlockchainService) {
+    //ask the blockchain service for the blockchain instance
     this.blockchain = blockchainService.blockchainInstance;
   }
 
